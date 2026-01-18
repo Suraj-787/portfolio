@@ -5,6 +5,7 @@ import { Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import Shuffle from '@/components/shuffle'
 
 export function ServicesSection() {
   // Set Frontend as default active category
@@ -87,7 +88,7 @@ export function ServicesSection() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-4xl md:text-[52px] md:leading-[60px] font-bold mb-4 text-black dark:text-white">
-              What I <span className="bg-[#FF4A60] dark:bg-red-900 text-white px-3 py-1 inline-block">specialize in</span>
+              What I <span className="bg-[#FF4A60] dark:bg-red-900 text-white px-3 py-1 inline-block"><Shuffle text="specialize in" tag="span" className="text-inherit" shuffleDirection="right" duration={0.35} animationMode="evenodd" shuffleTimes={1} ease="power3.out" stagger={0.03} threshold={0.1} triggerOnce={true} triggerOnHover={true} respectReducedMotion={true} loop={false} /></span>
             </h2>
             <p className="text-[#393939] dark:text-gray-400 text-base md:text-lg font-medium leading-relaxed md:leading-[30px] max-w-2xl mx-auto">
               Full-stack development with expertise in building production-grade applications, AI systems, and scalable
@@ -97,7 +98,7 @@ export function ServicesSection() {
 
           {/* Horizontal Tab Navigation */}
           <div className="mb-8 pt-2">
-            <div className="flex justify-center gap-3 overflow-x-auto pb-4 px-1 py-2">
+            <div className="flex flex-nowrap md:justify-center gap-3 overflow-x-auto pb-4 px-1 py-2 scrollbar-hide">
               {techStackCategories.map((category, index) => {
                 const isActive = activeCategory === category.category
 

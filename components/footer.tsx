@@ -20,7 +20,7 @@ export function Footer() {
                     Open to freelance projects, collaborations, and full-time opportunities
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
                   <Link href="mailto:iamsuraj787@gmail.com">
                     <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-black/90 dark:hover:bg-gray-100 rounded-full px-8 py-5 text-base font-bold h-auto whitespace-nowrap transition-colors">
                       <Mail className="w-5 h-5 mr-2" />
@@ -40,8 +40,8 @@ export function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0">
-                  <Image src="/images/footer-logo.jpeg" alt="Logo" width={32} height={32} className="object-cover" />
+                <div className="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-[#FFC224] -mt-1">
+                  <Image src="/footer-img.png" alt="Logo" width={32} height={32} className="object-cover object-top -translate-y-2" />
                 </div>
                 <span className="text-lg md:text-xl font-bold text-white">Suraj Kumar</span>
               </div>

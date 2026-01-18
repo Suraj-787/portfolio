@@ -1,5 +1,6 @@
 import { Github, ExternalLink } from "lucide-react"
 import Image from "next/image"
+import Shuffle from "@/components/shuffle"
 
 export function PortfolioSection() {
   const projects = [
@@ -44,7 +45,7 @@ export function PortfolioSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black dark:text-white">
             Featured <br />
-            <span className="bg-[#FFC224] dark:bg-yellow-900 text-black dark:text-white px-3 py-1 inline-block">projects</span>
+            <span className="bg-[#FFC224] dark:bg-yellow-900 text-black dark:text-white px-3 py-1 inline-block"><Shuffle text="projects" tag="span" className="text-inherit" shuffleDirection="right" duration={0.35} animationMode="evenodd" shuffleTimes={1} ease="power3.out" stagger={0.03} threshold={0.1} triggerOnce={true} triggerOnHover={true} respectReducedMotion={true} loop={false} /></span>
           </h2>
         </div>
 
@@ -56,7 +57,7 @@ export function PortfolioSection() {
                 className={`group grid ${index === 1 ? 'md:grid-cols-[60%_40%]' : 'md:grid-cols-[40%_60%]'} bg-white dark:bg-[#1a1a1a] border-[3px] border-black dark:border-white rounded-[32px] overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] transition-all`}
               >
                 {/* Content Section */}
-                <div className={`p-6 md:p-8 flex flex-col justify-center bg-white dark:bg-[#1a1a1a] ${index === 1 ? 'md:order-2' : ''}`}>
+                <div className={`p-6 md:p-8 flex flex-col justify-center bg-white dark:bg-[#1a1a1a] ${index === 1 ? 'order-2' : 'order-2 md:order-1'}`}>
                   <h3 className="text-xl md:text-[28px] font-bold mb-4 leading-tight md:leading-[40px] text-[#0B0B0B] dark:text-white mt-4">
                     {project.title}
                   </h3>
@@ -99,7 +100,7 @@ export function PortfolioSection() {
                 </div>
 
                 {/* Image Section */}
-                <div className={`${project.bgColor} relative overflow-hidden min-h-[220px] md:min-h-[350px] ${index === 1 ? 'md:order-1' : ''}`}>
+                <div className={`${project.bgColor} relative overflow-hidden min-h-[220px] md:min-h-[350px] ${index === 1 ? 'order-1' : 'order-1 md:order-2'}`}>
                   <Image
                     src={project.illustration || "/placeholder.svg"}
                     alt={project.title}

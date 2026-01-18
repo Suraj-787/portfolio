@@ -1,3 +1,5 @@
+import Shuffle from '@/components/shuffle'
+
 export function AboutHero() {
   return (
     <section className="container mx-auto px-4 py-16 md:py-24 bg-white dark:bg-[#0a0a0a] relative overflow-visible">
@@ -8,7 +10,7 @@ export function AboutHero() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <h1 className="text-[42px] leading-[50px] md:text-[72px] font-bold md:leading-[85px] text-black dark:text-white">
-          <span className="bg-[#2F81F7] dark:bg-blue-900 text-white px-3 py-1 inline-block">ABOUT</span>
+          <span className="bg-[#2F81F7] dark:bg-blue-900 text-white px-3 py-1 inline-block"><Shuffle text="ABOUT" tag="span" className="text-inherit" shuffleDirection="right" duration={0.35} animationMode="evenodd" shuffleTimes={1} ease="power3.out" stagger={0.03} threshold={0.1} triggerOnce={true} triggerOnHover={true} respectReducedMotion={true} loop={false} /></span>
         </h1>
       </div>
     </section>

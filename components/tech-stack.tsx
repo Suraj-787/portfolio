@@ -51,14 +51,14 @@ export function TechStack() {
           TECHNOLOGIES & TOOLS
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Left Side - Category Buttons */}
           <div className="space-y-4">
             {categories.map((category, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveCategory(index)}
-                className={`
+              <div key={index} className="flex flex-col gap-4">
+                <button
+                  onClick={() => setActiveCategory(index)}
+                  className={`
                   w-full text-left p-6 rounded-2xl border-4 border-black dark:border-white
                   font-bold text-lg md:text-xl
                   transition-all duration-300 ease-out
@@ -67,22 +67,48 @@ export function TechStack() {
                     : 'bg-white dark:bg-[#1a1a1a] text-[#0B0B0B] dark:text-white hover:scale-102 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)]'
                   }
                 `}
-              >
-                <div className="flex items-center justify-between">
-                  <span>{category.title}</span>
-                  <span className={`
+                >
+                  <div className="flex items-center justify-between">
+                    <span>{category.title}</span>
+                    <span className={`
                     text-2xl transition-transform duration-300
                     ${activeCategory === index ? 'rotate-90' : ''}
                   `}>
                     →
                   </span>
-                </div>
-              </button>
+                  </div>
+                </button>
+                
+                {/* Tech Stack Display - Mobile only (below each category) */}
+                {activeCategory === index && (
+                  <div className="md:hidden border-4 border-black dark:border-white rounded-2xl p-6 bg-white dark:bg-[#1a1a1a] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)]">
+                    <div className="mb-4">
+                      <div className={`
+                        inline-block px-4 py-2 rounded-full border-2 border-black dark:border-white
+                        ${category.color}
+                        font-bold text-sm
+                      `}>
+                        {category.title}
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      {category.items.map((item, itemIndex) => (
+                        <div
+                          key={itemIndex}
+                          className="px-4 py-3 text-sm font-semibold rounded-xl border-3 border-black dark:border-white bg-white dark:bg-[#0a0a0a] text-[#0B0B0B] dark:text-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.2)] hover:transform hover:-translate-y-1 hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[5px_5px_0px_0px_rgba(255,255,255,0.3)] transition-all duration-200"
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
-          {/* Right Side - Tech Stack Display */}
-          <div className="relative">
+          {/* Right Side - Tech Stack Display - Desktop only */}
+          <div className="relative hidden md:block">
             <div className="sticky top-8">
               <div className="border-4 border-black dark:border-white rounded-2xl p-8 bg-white dark:bg-[#1a1a1a] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] min-h-[400px]">
                 {/* Category Title */}

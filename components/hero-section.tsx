@@ -1,6 +1,10 @@
+'use client'
+
 import { Mail, FolderOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Magnet from "@/components/magnet"
+import Shuffle from "@/components/shuffle"
 
 export function HeroSection() {
   return (
@@ -16,8 +20,8 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-6">
           <h1 className="text-[42px] leading-[50px] md:text-[72px] font-bold md:leading-[85px] text-black dark:text-white">
-            I'm a <span className="bg-[#FF6B7A] dark:bg-red-900 text-white px-3 py-1 inline-block">Full-Stack Developer</span> building{" "}
-            <span className="bg-[#2F81F7] dark:bg-blue-900 text-white px-3 py-1 inline-block">AI & Scalable Products</span>
+            I'm a <br /><span className="bg-[#FF6B7A] dark:bg-red-900 text-white px-3 py-1 inline-block"><Shuffle text="Full-Stack" tag="span" className="text-inherit" shuffleDirection="right" duration={0.35} animationMode="evenodd" shuffleTimes={1} ease="power3.out" stagger={0.03} threshold={0.1} triggerOnce={true} triggerOnHover={true} respectReducedMotion={true} loop={false} /><br /><Shuffle text="Developer" tag="span" className="text-inherit" shuffleDirection="right" duration={0.35} animationMode="evenodd" shuffleTimes={1} ease="power3.out" stagger={0.03} threshold={0.1} triggerOnce={true} triggerOnHover={true} respectReducedMotion={true} loop={false} /></span> building{" "}
+            <span className="bg-[#2F81F7] dark:bg-blue-900 text-white px-3 py-1 inline-block"><Shuffle text="AI & Scalable" tag="span" className="text-inherit" shuffleDirection="right" duration={0.35} animationMode="evenodd" shuffleTimes={1} ease="power3.out" stagger={0.03} threshold={0.1} triggerOnce={true} triggerOnHover={true} respectReducedMotion={true} loop={false} /><br /><Shuffle text="Products" tag="span" className="text-inherit" shuffleDirection="right" duration={0.35} animationMode="evenodd" shuffleTimes={1} ease="power3.out" stagger={0.03} threshold={0.1} triggerOnce={true} triggerOnHover={true} respectReducedMotion={true} loop={false} /></span>
           </h1>
 
           <p className="text-[#393939] dark:text-gray-400 text-[16px] md:text-[18px] font-medium leading-[28px] md:leading-[30px] max-w-xl">
@@ -55,9 +59,11 @@ export function HeroSection() {
         <div className="flex justify-center md:justify-end relative">
           {/* Name Badge - Top right, replacing teal circle */}
           <div className="absolute -top-40 -right-8 z-20 hidden lg:block">
-            <span className="inline-flex items-center px-6 py-2.5 bg-blue-400 dark:bg-blue-900 text-black dark:text-white border-4 border-black dark:border-white rounded-full text-base md:text-lg font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]">
-              Suraj
-            </span>
+            <Magnet padding={80} disabled={false} magnetStrength={3}>
+              <span className="inline-flex items-center px-6 py-2.5 bg-blue-400 dark:bg-blue-900 text-black dark:text-white border-4 border-black dark:border-white rounded-full text-base md:text-lg font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] cursor-pointer">
+                Suraj
+              </span>
+            </Magnet>
           </div>
 
           {/* Cursor Pointer - Pointing to image */}

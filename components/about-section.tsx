@@ -2,6 +2,7 @@ import { User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import Shuffle from "@/components/shuffle"
 
 export function AboutSection() {
   return (
@@ -30,7 +31,7 @@ export function AboutSection() {
         <div className="space-y-6 md:space-y-8">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-black dark:text-white">
-              Building the <span className="bg-[#2F81F7] dark:bg-blue-900 text-white px-3 py-1 inline-block">future with AI</span>
+              Building the <span className="bg-[#2F81F7] dark:bg-blue-900 text-white px-3 py-1 inline-block"><Shuffle text="future with AI" tag="span" className="text-inherit" shuffleDirection="right" duration={0.35} animationMode="evenodd" shuffleTimes={1} ease="power3.out" stagger={0.03} threshold={0.1} triggerOnce={true} triggerOnHover={true} respectReducedMotion={true} loop={false} /></span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed">
               I'm a 3rd-year AI & Data Science student who builds production-grade applications that solve real problems.
@@ -64,7 +65,7 @@ export function AboutSection() {
           </div>
 
           <Link href="/about">
-            <Button className="bg-black dark:bg-white text-white dark:text-black hover:bg-black/90 dark:hover:bg-gray-100 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px] transition-colors">
+            <Button className="bg-black dark:bg-white text-white dark:text-black border-4 border-black dark:border-white hover:bg-black/90 dark:hover:bg-gray-100 rounded-lg py-5 px-8 md:py-[22px] md:px-[62px] text-base md:text-lg font-semibold h-auto w-full sm:w-auto sm:min-w-[240px] transition-all duration-200 hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.3)]">
               <User className="w-5 h-5" />
               More about me
             </Button>
