@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { CustomCursor } from "@/components/custom-cursor"
 import ClickSpark from "@/components/click-spark"
 import LightRays from "@/components/light-rays"
+import { Analytics } from "@vercel/analytics/next"
 
 // Initialize fonts
 const _geistMono = V0_Font_Geist_Mono({
@@ -57,6 +58,7 @@ export default function RootLayout({
           <ClickSpark sparkColor="#FFC224" sparkSize={15} sparkRadius={25} sparkCount={12} duration={600}>
             {children}
           </ClickSpark>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
